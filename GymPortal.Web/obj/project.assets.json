@@ -837,7 +837,9 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "GymPortal.Application": "1.0.0",
-          "GymPortal.Domain": "1.0.0"
+          "GymPortal.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.5",
+          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.5"
         },
         "compile": {
           "bin/placeholder/GymPortal.Infrastructure.dll": {}
