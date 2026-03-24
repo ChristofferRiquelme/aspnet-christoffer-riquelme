@@ -1,0 +1,16 @@
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/bin/Debug/net10.0/GymPortal.Application.deps.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/bin/Debug/net10.0/GymPortal.Application.dll
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/bin/Debug/net10.0/GymPortal.Application.pdb
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/bin/Debug/net10.0/GymPortal.Domain.dll
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/bin/Debug/net10.0/GymPortal.Domain.pdb
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPortal.Application.csproj.AssemblyReference.cache
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPortal.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPortal.Application.AssemblyInfoInputs.cache
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPortal.Application.AssemblyInfo.cs
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPortal.Application.csproj.CoreCompileInputs.cache
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPortal.Application.sourcelink.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPorta.A4ED39F9.Up2Date
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPortal.Application.dll
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/refint/GymPortal.Application.dll
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/GymPortal.Application.pdb
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/obj/Debug/net10.0/ref/GymPortal.Application.dll

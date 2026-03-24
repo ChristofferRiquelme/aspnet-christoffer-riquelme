@@ -1,0 +1,12 @@
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/bin/Debug/net10.0/GymPortal.Domain.deps.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/bin/Debug/net10.0/GymPortal.Domain.dll
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/bin/Debug/net10.0/GymPortal.Domain.pdb
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/GymPortal.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/GymPortal.Domain.AssemblyInfoInputs.cache
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/GymPortal.Domain.AssemblyInfo.cs
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/GymPortal.Domain.csproj.CoreCompileInputs.cache
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/GymPortal.Domain.sourcelink.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/GymPortal.Domain.dll
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/refint/GymPortal.Domain.dll
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/GymPortal.Domain.pdb
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/obj/Debug/net10.0/ref/GymPortal.Domain.dll
