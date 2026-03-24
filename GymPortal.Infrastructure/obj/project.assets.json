@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "GymPortal.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "GymPortal.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GymPortal.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GymPortal.Application.dll": {}
+        }
+      },
+      "GymPortal.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/GymPortal.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GymPortal.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "GymPortal.Application/1.0.0": {
+      "type": "project",
+      "path": "../GymPortal.Application/GymPortal.Application.csproj",
+      "msbuildProject": "../GymPortal.Application/GymPortal.Application.csproj"
+    },
+    "GymPortal.Domain/1.0.0": {
+      "type": "project",
+      "path": "../GymPortal.Domain/GymPortal.Domain.csproj",
+      "msbuildProject": "../GymPortal.Domain/GymPortal.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "GymPortal.Application >= 1.0.0",
+      "GymPortal.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/christoffer/.nuget/packages/": {}
@@ -31,7 +69,14 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/GymPortal.Application.csproj": {
+              "projectPath": "/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Application/GymPortal.Application.csproj"
+            },
+            "/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/GymPortal.Domain.csproj": {
+              "projectPath": "/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Domain/GymPortal.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
