@@ -1,0 +1,19 @@
+﻿@using GymPortal.Domain
+
+@model List<GymClass>
+
+<div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">Pass</h1>
+
+    <div class="grid gap-4">
+        @foreach (var item in Model)
+        {
+            <div class="p-4 bg-white shadow rounded-xl">
+                <h2 class="text-xl font-semibold">@item.Name</h2>
+                <p>@item.Date.ToString("g")</p>
+                <p>Instruktör: @item.Instructor</p>
+                <p>Kategori: @item.Category</p>
+            </div>
+        }
+    </div>
+</div>
