@@ -1,4 +1,5 @@
 using System;
+using GymPortal.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,4 +12,6 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         
     }
+
+    public DbSet<GymClass> GymClasses => Set<GymClass>();
 }
