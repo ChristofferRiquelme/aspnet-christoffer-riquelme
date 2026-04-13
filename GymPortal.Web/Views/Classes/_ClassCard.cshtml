@@ -1,0 +1,13 @@
+﻿@using GymPortal.Domain
+
+@model GymClass
+
+<div class="p-5 bg-white shadow-md rounded-2xl hover:shadow-lg transition">
+    <h2 class="text-xl font-bold">@Model.Name</h2>
+
+    <div class="text-sm text-gray-500 mt-2">
+        <p>@Model.Date.ToString("dddd HH:mm")</p>
+        <p>👤 @Model.Instructor</p>
+        <p>🏷️ @Model.Category</p>
+    </div>
+</div>

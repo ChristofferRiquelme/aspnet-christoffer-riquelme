@@ -8,12 +8,7 @@
     <div class="grid gap-4">
         @foreach (var item in Model)
         {
-            <div class="p-4 bg-white shadow rounded-xl">
-                <h2 class="text-xl font-semibold">@item.Name</h2>
-                <p>@item.Date.ToString("g")</p>
-                <p>Instruktör: @item.Instructor</p>
-                <p>Kategori: @item.Category</p>
-            </div>
+            <partial name="_ClassCard" model="item" />
         }
     </div>
 </div>
