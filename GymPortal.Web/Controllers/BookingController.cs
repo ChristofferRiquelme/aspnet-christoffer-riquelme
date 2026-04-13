@@ -15,7 +15,8 @@ namespace GymPortal.Web.Controllers
         {
             _context = context;
         }
-        // GET: BookingController
+        
+        [HttpPost]
         public ActionResult Book(int classId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

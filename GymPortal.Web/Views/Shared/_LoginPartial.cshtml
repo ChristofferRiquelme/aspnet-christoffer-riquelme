@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using GymPortal.Infrastructure
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="flex gap-4">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li>
+        <span class="text-gray-700">
+            Hello @UserManager.GetUserName(User)!
+        </span>
+    </li>
+    <li>
+        <form asp-area="Identity" asp-page="/Account/Logout" method="post">
+            <button type="submit" class="text-red-500">
+                Logout
+            </button>
+        </form>
+    </li>
+}
+else
+{
+    <li>
+        <a asp-area="Identity" asp-page="/Account/Register" class="text-blue-500">
+            Register
+        </a>
+    </li>
+    <li>
+        <a asp-area="Identity" asp-page="/Account/Login" class="text-blue-500">
+            Login
+        </a>
+    </li>
+}
+</ul>
