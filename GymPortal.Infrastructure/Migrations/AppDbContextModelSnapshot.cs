@@ -17,6 +17,26 @@ namespace GymPortal.Infrastructure.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.5");
 
+            modelBuilder.Entity("GymPortal.Domain.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("GymClassId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GymClassId");
+
+                    b.ToTable("Bookings");
+                });
+
             modelBuilder.Entity("GymPortal.Domain.GymClass", b =>
                 {
                     b.Property<int>("Id")
@@ -233,6 +253,17 @@ namespace GymPortal.Infrastructure.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("GymPortal.Domain.Booking", b =>
+                {
+                    b.HasOne("GymPortal.Domain.GymClass", "GymClass")
+                        .WithMany()
+                        .HasForeignKey("GymClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GymClass");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

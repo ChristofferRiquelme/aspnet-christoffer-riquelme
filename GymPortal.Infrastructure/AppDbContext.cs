@@ -14,4 +14,5 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     }
 
     public DbSet<GymClass> GymClasses => Set<GymClass>();
+    public DbSet<Booking> Bookings => Set<Booking>();
 }
