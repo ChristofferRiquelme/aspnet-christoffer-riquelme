@@ -41,5 +41,18 @@ namespace GymPortal.Web.Controllers
             return RedirectToAction("Index", "Classes");
         }
 
+        [Authorize]
+        public IActionResult MyBookings()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var bookings = _context.Bookings
+                .Where(b => b.UserId == userId)
+                .Select(b => b.GymClass)
+                .ToList();
+
+            return View(bookings);
+        }
+
     }
 }

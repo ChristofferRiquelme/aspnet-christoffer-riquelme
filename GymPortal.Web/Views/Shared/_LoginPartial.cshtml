@@ -10,6 +10,9 @@
         <span class="text-gray-700">
             Hello @UserManager.GetUserName(User)!
         </span>
+        <a asp-controller="Booking" asp-action="MyBookings" class="text-gray-700">
+            My bookings
+        </a>
     </li>
     <li>
         <form asp-area="Identity" asp-page="/Account/Logout" method="post">
