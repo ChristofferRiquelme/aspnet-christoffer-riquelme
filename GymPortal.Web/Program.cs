@@ -1,14 +1,19 @@
 using GymPortal.Domain;
 using GymPortal.Infrastructure;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("AppDbContextConnection") ?? throw new InvalidOperationException("Connection string 'AppDbContextConnection' not found.");;
 
 // Add services to the container.
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data Source=gym.db"));
 // builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
-builder.Services.AddDefaultIdentity<ApplicationUser>()
+// builder.Services.AddDefaultIdentity<ApplicationUser>()
+//     .AddEntityFrameworkStores<AppDbContext>();
+builder.Services
+    .AddDefaultIdentity<ApplicationUser>(options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+    })
     .AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
