@@ -21,6 +21,7 @@
   <ItemGroup>
     <Folder Include="Views/Booking/" />
     <Folder Include="Views/Classes/" />
+    <Folder Include="Views/Membership/" />
   </ItemGroup>
 
   <PropertyGroup>

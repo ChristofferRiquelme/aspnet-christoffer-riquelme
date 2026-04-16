@@ -1,0 +1,25 @@
+﻿@using GymPortal.Domain
+@model Membership?
+
+<div class="max-w-xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">Mitt medlemskap</h1>
+
+    @if (Model == null || !Model.IsActive)
+    {
+        <p class="text-red-500 mb-4">Du har inget aktivt medlemskap.</p>
+
+        <form asp-action="Create" method="post">
+            <button class="bg-green-500 text-white px-4 py-2 rounded">
+                Skaffa medlemskap
+            </button>
+        </form>
+    }
+    else
+    {
+        <div class="p-4 bg-white shadow rounded-xl">
+            <p><strong>Start:</strong> @Model.StartDate.ToShortDateString()</p>
+            <p><strong>Slut:</strong> @Model.EndDate.ToShortDateString()</p>
+            <p class="text-green-600 font-semibold mt-2">Active</p>
+        </div>
+    }
+</div>

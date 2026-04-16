@@ -24,6 +24,13 @@ namespace GymPortal.Web.Controllers
             var exists = _context.Bookings
                 .Any(b => b.GymClassId == classId && b.UserId == userId);
 
+            var hasMembership = _context.Memberships.Any(m => m.UserId == userId && m.EndDate > DateTime.Now);
+
+            if (!hasMembership)
+            {
+                return RedirectToAction("Index", "Membership");
+            }
+
             if (exists)
             {
                 return RedirectToAction("Index", "Classes");
