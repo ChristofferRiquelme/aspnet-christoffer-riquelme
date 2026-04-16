@@ -1,6 +1,9 @@
 ﻿@using GymPortal.Domain
-
 @model GymClass
+
+@{
+    var isBooked = ViewData["IsBooked"] as bool? ?? false;
+}
 
 <div class="p-5 bg-white shadow-md rounded-2xl hover:shadow-lg transition">
     <h2 class="text-xl font-bold">@Model.Name</h2>
@@ -14,11 +17,24 @@
 
 @if (User.Identity!.IsAuthenticated)
 {
-    <form asp-controller="Booking" asp-action="Book" method="post" class="mt-4">
-        <input type="hidden" name="classId" value="@Model.Id" />
+    if (isBooked)
+    {
+        <form asp-controller="Booking" asp-action="Cancel" method="post" class="mt-4">
+            <input type="hidden" name="classId" value="@Model.Id" />
 
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">
-            Book
-        </button>
-    </form>
+            <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                Cancel
+            </button>
+        </form>
+    }
+    else
+    {
+        <form asp-controller="Booking" asp-action="Book" method="post" class="mt-4">
+            <input type="hidden" name="classId" value="@Model.Id" />
+
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Book
+            </button>
+        </form>
+    }
 }

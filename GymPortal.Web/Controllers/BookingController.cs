@@ -54,5 +54,22 @@ namespace GymPortal.Web.Controllers
             return View(bookings);
         }
 
+        [HttpPost]
+        [Authorize]
+        public IActionResult Cancel(int classId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var booking = _context.Bookings.FirstOrDefault(b => b.GymClassId == classId && b.UserId == userId);
+
+            if (booking != null)
+            {
+                _context.Bookings.Remove(booking);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("MyBookings");
+        }
+
     }
 }

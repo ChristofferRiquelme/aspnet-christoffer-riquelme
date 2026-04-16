@@ -13,7 +13,8 @@
         <div class="grid gap-4">
             @foreach (var item in Model)
             {
-                <partial name="_ClassCard" model="item" />
+                @* <partial name="_ClassCard" model="item" /> *@
+                <partial name="_ClassCard" model="item" view-data='new ViewDataDictionary(ViewData) { { "IsBooked", true } }' />
             }
         </div>
     }
