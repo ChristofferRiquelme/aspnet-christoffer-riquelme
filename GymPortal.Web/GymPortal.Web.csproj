@@ -22,6 +22,8 @@
     <Folder Include="Views/Booking/" />
     <Folder Include="Views/Classes/" />
     <Folder Include="Views/Membership/" />
+    <Folder Include="wwwroot/images/" />
+    <Folder Include="wwwroot/images/logos/" />
   </ItemGroup>
 
   <PropertyGroup>
