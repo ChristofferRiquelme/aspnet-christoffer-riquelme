@@ -1,0 +1,24 @@
+﻿@using GymPortal.Infrastructure
+@model ApplicationUser
+
+<div class="max-w-xl mx-auto p-6">
+
+    <h1 class="text-3xl font-bold mb-6">My Account</h1>
+
+    <div class="bg-white p-6 rounded-xl shadow">
+
+        <p class="mb-2"><strong>Email:</strong> @Model.Email</p>
+
+        <a asp-action="Edit" class="text-blue-500">Edit profile</a>
+
+        <form asp-action="Delete" method="post" class="mt-4">
+
+            <button class="bg-red-500 text-white px-4 py-2 rounded">
+                Remove Account
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
