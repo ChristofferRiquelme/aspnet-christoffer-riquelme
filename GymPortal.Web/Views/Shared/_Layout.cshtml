@@ -29,24 +29,24 @@
 
         <!-- Logo -->
         <div class="flex items-center gap-3">
-            <a asp-controller="Home" asp-action="Index" class="hover:text-white transition">
+            <a asp-controller="Home" asp-action="Index"">
                 <img src="/images/logos/corefitness-logo.svg" class="h-8" alt="Logo" />
             </a>
         </div>
 
         <!-- Center menu -->
-        <div class="hidden md:flex items-center gap-8 text-gray-300 text-sm">
-            <a href="#" class="hover:text-white transition">Fitness Centers</a>
-            <a asp-controller="Membership" asp-action="Index" class="hover:text-white transition">Memberships</a>
-            <a href="#" class="hover:text-white transition">Training</a>
-            <a href="#" class="hover:text-white transition">Customer Service</a>
-            <a href="#" class="hover:text-white transition">Store</a>
+        <div class="hidden md:flex items-center gap-8 text-white text-sm">
+            <a href="#">Fitness Centers</a>
+            <a asp-controller="Membership" asp-action="Index">Memberships</a>
+            <a href="#">Training</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Store</a>
         </div>
 
         <!-- Right side -->
         <div class="flex items-center gap-6">
             <a asp-area="Identity" asp-page="/Account/Register" 
-               class="text-gray-300 text-sm hover:text-white transition">
+               class="text-white text-sm hover:text-[#D6EB31] transition">
                 Become Member
             </a>
 
