@@ -6,7 +6,11 @@ module.exports = {
     "./Pages/**/*.cshtml"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        dm: [' "DM Sans"', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }

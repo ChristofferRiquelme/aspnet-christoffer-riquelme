@@ -6,58 +6,13 @@
     <title>@ViewData["Title"] - GymPortal.Web</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/css/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        @* <nav class="bg-blue-950 m-4 p-8 rounded-2xl">
-            <div class="flex justify-between content-center">
-                <div class="div">
-                    <a asp-controller="Home" asp-action="Index"><img src="/images/logos/corefitness-logo.svg" alt="Logo" /></></a>
-                </div>
-                <div class="div">
-                    <a asp-controller="Classes" asp-action="Index" class="text-white">Pass</a>
-                    <a asp-controller="Membership" asp-action="Index" class="text-white">Memberships</a>
-                </div>
-                <div>
-                    <a asp-area="Identity" asp-page="/Account/Register" class="text-white">Become a member</a>
-                    <a asp-area="Identity" asp-page="/Account/Login" class="text-white">Sign in</a>
-                </div>
-            </div>
-        </nav> *@
-        <nav class="bg-[#0b0f1a] m-4 px-8 py-4 rounded-2xl shadow-lg">
-    <div class="flex items-center justify-between">
-
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-            <a asp-controller="Home" asp-action="Index"">
-                <img src="/images/logos/corefitness-logo.svg" class="h-8" alt="Logo" />
-            </a>
-        </div>
-
-        <!-- Center menu -->
-        <div class="hidden md:flex items-center gap-8 text-white text-sm">
-            <a href="#">Fitness Centers</a>
-            <a asp-controller="Membership" asp-action="Index">Memberships</a>
-            <a href="#">Training</a>
-            <a href="#">Customer Service</a>
-            <a href="#">Store</a>
-        </div>
-
-        <!-- Right side -->
-        <div class="flex items-center gap-6">
-            <a asp-area="Identity" asp-page="/Account/Register" 
-               class="text-white text-sm hover:text-[#D6EB31] transition">
-                Become Member
-            </a>
-
-            <a asp-area="Identity" asp-page="/Account/Login"
-               class="bg-lime-400 text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-lime-300 transition">
-                Sign In >
-            </a>
-        </div>
-
-    </div>
-</nav>
+        @await Html.PartialAsync("_Navbar")
     </header>
     <div class="container">
         <main role="main" class="pb-3">

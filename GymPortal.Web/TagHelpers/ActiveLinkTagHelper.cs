@@ -6,41 +6,51 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace GymPortal.Web.TagHelpers;
 
 [HtmlTargetElement("a", Attributes = "asp-controller, asp-action")]
+
 public class ActiveLinkTagHelper : TagHelper
+
 {
-        [HtmlAttributeName("asp-controller")]
 
-        public string? Controller { get; set; }
+    [HtmlAttributeName("asp-controller")]
 
-        [HtmlAttributeName("asp-action")]
+    public string? Controller { get; set; }
 
-        public string? Action { get; set; }
+    [HtmlAttributeName("asp-action")]
 
-        [ViewContext]
+    public string? Action { get; set; }
 
-        [HtmlAttributeNotBound]
+    [ViewContext]
 
-        public ViewContext ViewContext { get; set; } = default!;
+    [HtmlAttributeNotBound]
 
-        public override void Process(TagHelperContext context, TagHelperOutput output)
+    public ViewContext ViewContext { get; set; } = default!;
+
+    public override void Process(TagHelperContext context, TagHelperOutput output)
+
+    {
+
+        var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+
+        var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+
+        var isActive =
+
+            string.Equals(currentController, Controller, StringComparison.OrdinalIgnoreCase) &&
+
+            string.Equals(currentAction, Action, StringComparison.OrdinalIgnoreCase);
+
+        var existingClasses = output.Attributes["class"]?.Value?.ToString() ?? "";
+
+        if (isActive)
 
         {
 
-            var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
-
-            var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
-
-            var isActive = currentController == Controller && currentAction == Action;
-
-            var baseClass = "text-sm transition";
-
-            var activeClass = "text-[#D6EB31]";
-
-            var inactiveClass = "text-white hover:text-[#D6EB31]";
-
-            var finalClass = isActive ? activeClass : inactiveClass;
-
-            output.Attributes.SetAttribute("class", $"{baseClass} {finalClass}");
+            existingClasses = $"{existingClasses} text-[#D6EB31] font-medium";
 
         }
+
+        output.Attributes.SetAttribute("class", existingClasses.Trim());
+
+    }
+
 }
