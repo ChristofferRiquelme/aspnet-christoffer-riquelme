@@ -15,18 +15,6 @@
             <a href="#" class="text-white hover:text-[#D6EB31]">Store</a>
         </div>
 
-        @* <div class="flex items-center gap-6">
-            <a asp-area="Identity" asp-page="/Account/Register" 
-               class="text-white text-sm hover:text-[#D6EB31] transition">
-                Become Member
-            </a>
-
-            <a asp-area="Identity" asp-page="/Account/Login"
-               class="bg-lime-400 text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-lime-300 transition">
-                Sign In >
-            </a>
-        </div> *@
-
         <div class="flex items-center gap-6">
 
             @if (User.Identity!.IsAuthenticated)

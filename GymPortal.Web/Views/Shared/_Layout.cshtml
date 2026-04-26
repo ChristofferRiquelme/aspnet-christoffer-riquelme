@@ -14,19 +14,17 @@
     <header>
         @await Html.PartialAsync("_Navbar")
     </header>
-    <div class="container">
+    <div class="w-full">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-t border-gray-700 text-gray-400 py-6">
         <div class="container">
             &copy; 2026 - GymPortal - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

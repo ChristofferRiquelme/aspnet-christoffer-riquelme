@@ -1,7 +1,7 @@
 ﻿@using GymPortal.Infrastructure
 @model ApplicationUser
 
-<div class="min-h-screen bg-gray-50 py-10">
+<div class="w-full max-w-full bg-gray-50 pt-16">
 
     <h1 class="text-3xl font-bold text-center mb-10">
         My Account
@@ -33,7 +33,7 @@
                     My Bookings <span>›</span>
                 </a>
 
-                <form asp-controller="Account" asp-action="Logout" method="post">
+                <form asp-area="Identity" asp-page="/Account/Logout" method="post">
                     <button class="w-full text-left flex justify-between px-4 py-3 hover:text-[#D6EB31]">
                         Sign Out <span>›</span>
                     </button>
@@ -47,19 +47,21 @@
         <div class="w-2/3 space-y-6 max-w-2x1">
 
             <div class="bg-white p-6 rounded-xl shadow">
-                <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+                <h2 class="text-2xl font-semibold">About Me</h2>
+                <div class="border-t my-4"></div>
 
                 <form asp-action="Edit">
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Enter First Name" class="p-3 bg-gray-100 rounded-lg">
-                        <input type="text" placeholder="Enter Last Name" class="p-3 bg-gray-100 rounded-lg">
-                    </div>
+                    <p>First Name</p>
+                    <input type="text" placeholder="Enter First Name" class="w-full p-3 bg-gray-100 rounded-lg">
 
-                    <input type="email" placeholder="username@domain.com"
-                        class="w-full mt-4 p-3 bg-gray-100 rounded-lg">
+                    <p>Last Name</p>
+                    <input type="text" placeholder="Enter Last Name" class="w-full p-3 mt-4 bg-gray-100 rounded-lg">
 
-                    <input type="text" placeholder="Enter Phone Number"
-                        class="w-full mt-4 p-3 bg-gray-100 rounded-lg">
+                    <p>Email Address*</p>
+                    <input type="email" placeholder="username@domain.com" class="w-full mt-4 p-3 bg-gray-100 rounded-lg">
+
+                    <p>Phone Number</p>
+                    <input type="text" placeholder="Enter Phone Number" class="w-full mt-4 p-3 bg-gray-100 rounded-lg">
 
                     <div class="mt-6 flex justify-end">
                         <button class="bg-[#D6EB31] px-6 py-2 rounded-full font-semibold">
