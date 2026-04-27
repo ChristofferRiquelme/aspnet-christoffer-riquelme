@@ -1,20 +1,19 @@
 ﻿@using GymPortal.Domain
-@model List<GymClass>
+@model List<Booking>
 
 <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6">Mina bokningar</h1>
+    <h1 class="text-3xl font-bold mb-6">My Bookings</h1>
 
     @if (!Model.Any())
     {
-        <p class="text-gray-500">Du har inga bokningar än.</p>
+        <p class="text-gray-500">No bookings yet.</p>
     }
     else
     {
         <div class="grid gap-4">
             @foreach (var item in Model)
             {
-                @* <partial name="_ClassCard" model="item" /> *@
-                <partial name="_ClassCard" model="item" view-data='new ViewDataDictionary(ViewData) { { "IsBooked", true } }' />
+                <partial name="_ClassCard" model="item.GymClass" view-data='new ViewDataDictionary(ViewData) { { "IsBooked", true } }' />
             }
         </div>
     }

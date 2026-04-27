@@ -3,6 +3,7 @@ using GymPortal.Domain;
 using GymPortal.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GymPortal.Web.Controllers
 {
@@ -55,7 +56,7 @@ namespace GymPortal.Web.Controllers
 
             var bookings = _context.Bookings
                 .Where(b => b.UserId == userId)
-                .Select(b => b.GymClass)
+                .Include(b => b.GymClass)
                 .ToList();
 
             return View(bookings);
