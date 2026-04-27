@@ -26,6 +26,7 @@
     <Folder Include="Views/Membership/" />
     <Folder Include="wwwroot/images/" />
     <Folder Include="wwwroot/images/account/" />
+    <Folder Include="wwwroot/images/icons/" />
     <Folder Include="wwwroot/images/logos/" />
   </ItemGroup>
 
