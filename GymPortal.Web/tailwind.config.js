@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         dm: [' "DM Sans"', 'sans-serif'],
+        poppins: ['"Poppins"', 'sans-serif'],
       }
     },
   },
