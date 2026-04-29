@@ -28,10 +28,8 @@
         </main>
     </div>
 
-    <footer class="border-t border-gray-700 text-gray-400 py-6">
-        <div class="container">
-            &copy; 2026 - GymPortal - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer>
+        <partial name="_Footer" />
     </footer>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
