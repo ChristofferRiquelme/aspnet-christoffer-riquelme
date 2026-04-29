@@ -31,7 +31,7 @@
                 </a>
                 <div class="border-t my-4"></div>
 
-                <a asp-controller="Membership" asp-action="Index" class="group flex justify-between hover:text-[#D6EB31] transition font-poppins text-xs font-semibold">
+                <a asp-controller="Account" asp-action="Membership" class="group flex justify-between hover:text-[#D6EB31] transition font-poppins text-xs font-semibold">
                     My Membership
                     <span class="relative w-3 h-4">
                         <img src="/images/icons/arrow-right.svg" alt="Arrow" class="absolute inset-0 group-hover:hidden">
@@ -160,6 +160,34 @@
                                 </form>
                             </div>
                         }
+                    </div>
+                }
+            </div>
+        }
+
+        else if (Model.ActiveSection == "Membership")
+        {
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h2 class="font-poppins text-2xl">My Membership</h2>
+                <div class="border-t my-4"></div>
+
+                @if (Model.Membership == null || Model.Membership.EndDate < DateTime.Now)
+                {
+                    <p class="font-dm text-sm text-gray-500 mb-4">
+                        You do not have an active membership.
+                    </p>
+
+                    <a asp-controller="Membership" asp-action="Index"
+                    class="bg-[#D6EB31] px-4 py-2 rounded-full text-xs font-semibold">
+                        Get Membership
+                    </a>
+                }
+                else
+                {
+                    <div class="space-y-2 font-dm text-sm">
+                        <p><strong>Status:</strong> Active</p>
+                        <p><strong>Start:</strong> @Model.Membership.StartDate.ToShortDateString()</p>
+                        <p><strong>End:</strong> @Model.Membership.EndDate.ToShortDateString()</p>
                     </div>
                 }
             </div>

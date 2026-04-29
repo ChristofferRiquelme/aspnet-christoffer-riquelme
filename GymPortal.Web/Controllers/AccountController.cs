@@ -128,6 +128,32 @@ namespace GymPortal.Web.Controllers
             return View("Index", viewModel);
         }
 
+        public IActionResult Membership()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+
+            if (user == null)
+                return NotFound();
+
+            var membership = _context.Memberships
+                .FirstOrDefault(m => m.UserId == userId);
+
+            var viewModel = new AccountPageViewModel
+            {
+                User = user,
+                ActiveSection = "Membership"
+            };
+
+            if (membership != null)
+            {
+                viewModel.Membership = membership;
+            }
+
+            return View("Index", viewModel);
+        }
+
 
     }
 }

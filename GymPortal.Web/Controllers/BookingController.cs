@@ -76,7 +76,7 @@ namespace GymPortal.Web.Controllers
                 _context.SaveChanges();
             }
 
-            return RedirectToAction("MyBookings");
+            return RedirectToAction("Bookings", "Account");
         }
 
     }
