@@ -683,6 +683,10 @@ video {
   margin-top: 0.75rem;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
@@ -1104,6 +1108,11 @@ video {
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#D6EB31\] {
+  --tw-text-opacity: 1;
+  color: rgb(214 235 49 / var(--tw-text-opacity, 1));
 }
 
 .shadow {
