@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using GymPortal.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymPortal.Web.Controllers
@@ -9,10 +10,12 @@ namespace GymPortal.Web.Controllers
     public class AccountController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(AppDbContext context)
+        public AccountController(AppDbContext context, SignInManager<ApplicationUser> signInManager)
         {
             _context = context;
+            _signInManager = signInManager;
         }
         // GET: AccountController
         [Authorize]
@@ -61,6 +64,32 @@ namespace GymPortal.Web.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Delete()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+
+            if (user == null)
+                return NotFound();
+            
+            var bookings = _context.Bookings.Where(b => b.UserId == userId);
+            _context.Bookings.RemoveRange(bookings);
+
+            var memberships = _context.Memberships.Where(m => m.UserId == userId);
+            _context.Memberships.RemoveRange(memberships);
+            
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = "Your account has been removed.";
+
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
         }
 
 

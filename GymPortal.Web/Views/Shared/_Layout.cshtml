@@ -14,6 +14,14 @@
     <header>
         @await Html.PartialAsync("_Navbar")
     </header>
+
+    @if (TempData["Message"] != null)
+{
+    <div data-alert class="fixed top-6 right-6 z-50 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg font-dm text-sm">
+        @TempData["Message"]
+    </div>
+}
+
     <div class="w-full">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -27,5 +35,16 @@
     </footer>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        setTimeout(() => {
+            const el = document.querySelector('[data-alert]');
+            if (el) {
+                el.style.transition = "opacity 0.5s";
+                el.style.opacity = "0";
+                setTimeout(() => el.remove(), 500);
+            }
+        }, 2500);
+    </script>
 </body>
 </html>
