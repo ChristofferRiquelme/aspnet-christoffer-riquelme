@@ -1,8 +1,10 @@
 using System.Security.Claims;
 using GymPortal.Infrastructure;
+using GymPortal.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GymPortal.Web.Controllers
 {
@@ -23,14 +25,19 @@ namespace GymPortal.Web.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+            var viewModel = new AccountPageViewModel
+            {
+                User = user!,
+                ActiveSection = "About"
+            };
 
-            return View(user);
+            return View(viewModel);
         }
 
         // POST: AccountController
         [HttpPost]
         [Authorize]
-        public IActionResult Edit(ApplicationUser model, IFormFile? profileImage)
+        public IActionResult Edit(AccountPageViewModel model, IFormFile? profileImage)
         {
             if (!ModelState.IsValid)
             {
@@ -43,25 +50,30 @@ namespace GymPortal.Web.Controllers
             if (user == null)
                 return NotFound();
             
-            user.FirstName = model.FirstName;
-            user.LastName = model.LastName;
-            user.Email = model.Email;
-            user.PhoneNumberCustom = model.PhoneNumberCustom;
+            user.FirstName = model.User.FirstName;
+            user.LastName = model.User.LastName;
+            user.Email = model.User.Email;
+            user.PhoneNumberCustom = model.User.PhoneNumberCustom;
 
-            if (profileImage != null)
+            if (profileImage != null && profileImage.Length > 0)
             {
-                var fileName = Guid.NewGuid() + Path.GetExtension(profileImage.FileName);
-                var filePath = Path.Combine("wwwroot/images/profiles", fileName);
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "profiles");
 
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    profileImage.CopyTo(stream);
-                }
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var fileName = Guid.NewGuid() + Path.GetExtension(profileImage.FileName);
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                using var stream = new FileStream(filePath, FileMode.Create);
+                profileImage.CopyTo(stream);
 
                 user.ProfileImagePath = "/images/profiles/" + fileName;
             }
 
             _context.SaveChanges();
+
+            TempData["Message"] = "Your profile has been updated.";
 
             return RedirectToAction("Index");
         }
@@ -90,6 +102,30 @@ namespace GymPortal.Web.Controllers
             await _signInManager.SignOutAsync();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult Bookings()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+
+            if (user == null)
+                return NotFound();
+
+            var bookings = _context.Bookings
+                .Include(b => b.GymClass)
+                .Where(b => b.UserId == userId)
+                .ToList();
+
+            var viewModel = new AccountPageViewModel
+            {
+                User = user,
+                Bookings = bookings,
+                ActiveSection = "Bookings"
+            };
+
+            return View("Index", viewModel);
         }
 
 
