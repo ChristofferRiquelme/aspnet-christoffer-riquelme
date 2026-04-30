@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="flex items-center justify-center bg-white px-6 mt-44 mb-36">
+
+    <div class="text-center max-w-[800px]">
+
+        <img src="/images/backgrounds/404-error.svg" alt="404 Error Image" class="mx-auto mb-10 w-full max-w-[600px]">
+
+        <h1 class="font-poppins text-5xl font-bold text-[#27252F] mt-10">
+            Oops! page not found
+        </h1>
+
+        <p class="font-dm text-[#575757] mt-8 mb-14">
+            The page you are looking for does not exists.
+        </p>
+
+        <a asp-controller="Home" asp-action="Index"
+           class="inline-flex items-center gap-2 bg-[#D6EB31] px-8 py-4 rounded-full font-dm font-semibold text-base hover:opacity-90 transition">
+            Back to Homepage
+            <img src="/images/icons/arrow-right.svg" class="w-2">
+        </a>
+
+    </div>
+
+</div>
