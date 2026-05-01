@@ -328,7 +328,6 @@
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/nezrqnk58p-{0}-muycvpuwrr-muycvpuwrr.gz
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/v0zgfp0y55-{0}-87fc7y1x7t-87fc7y1x7t.gz
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/yfc7ypekbg-{0}-mlv21k5csn-mlv21k5csn.gz
-/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/bmt6jotkji-{0}-mzq0uk48ru-mzq0uk48ru.gz
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/9rkxtylbzb-{0}-cfs0wbahkk-cfs0wbahkk.gz
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/57ulpbl37y-{0}-61n19gt1b8-61n19gt1b8.gz
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/tsm0azpusz-{0}-2f5uslue4g-2f5uslue4g.gz
@@ -362,3 +361,16 @@
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/GymPortal.Web.staticwebassets.runtime.json
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/package-lock.json
 /Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/package.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/bin/Debug/net10.0/appsettings.Development.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/bin/Debug/net10.0/appsettings.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/bin/Debug/net10.0/GymPortal.Web.deps.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/bin/Debug/net10.0/GymPortal.Web.runtimeconfig.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/bin/Debug/net10.0/GymPortal.Web.staticwebassets.endpoints.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/bin/Debug/net10.0/GymPortal.Web.staticwebassets.runtime.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/bin/Debug/net10.0/package-lock.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/bin/Debug/net10.0/bin/Debug/net10.0/bin/Debug/net10.0/package.json
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/bmt6jotkji-{0}-k85kqskfzw-k85kqskfzw.gz
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/ua062hs21r-{0}-e0ibv4ipp3-e0ibv4ipp3.gz
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/es0t6i70j5-{0}-1voy5187bs-1voy5187bs.gz
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/x1uuxd1dk3-{0}-2qxcw55p4y-2qxcw55p4y.gz
+/Users/christoffer/Sites/ecutbildning/GymPortal/GymPortal.Web/obj/Debug/net10.0/compressed/462a0jvb1r-{0}-xpu3gxp761-xpu3gxp761.gz

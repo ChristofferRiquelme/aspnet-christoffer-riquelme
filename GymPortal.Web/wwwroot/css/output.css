@@ -826,6 +826,14 @@ video {
   height: 650px;
 }
 
+.h-auto {
+  height: auto;
+}
+
+.h-\[84px\] {
+  height: 84px;
+}
+
 .max-h-\[520px\] {
   max-height: 520px;
 }
@@ -922,6 +930,10 @@ video {
   width: 580px;
 }
 
+.w-12 {
+  width: 3rem;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -962,8 +974,20 @@ video {
   max-width: none;
 }
 
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
 .translate-y-\[1px\] {
   --tw-translate-y: 1px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1025,6 +1049,14 @@ video {
 
 .gap-1 {
   gap: 0.25rem;
+}
+
+.gap-16 {
+  gap: 4rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .gap-x-6 {
@@ -1197,8 +1229,32 @@ video {
   background-color: transparent;
 }
 
+.bg-\[\#2A2934\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(42 41 52 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[url\(\'\/images\/backgrounds\/dark-section-img\.svg\'\)\] {
   background-image: url('/images/backgrounds/dark-section-img.svg');
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.from-\[\#F3F3F3\] {
+  --tw-gradient-from: #F3F3F3 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(243 243 243 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-\[\#F8F8F8\] {
+  --tw-gradient-to: rgb(248 248 248 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #F8F8F8 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-white {
+  --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
 .bg-repeat {
@@ -1310,6 +1366,11 @@ video {
   padding-bottom: 15px;
 }
 
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1414,6 +1475,14 @@ video {
   font-size: 14px;
 }
 
+.text-\[42px\] {
+  font-size: 42px;
+}
+
+.text-\[48px\] {
+  font-size: 48px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1428,6 +1497,10 @@ video {
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
 }
 
 .text-\[\#2A2934\] {
@@ -1540,6 +1613,10 @@ video {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.opacity-30 {
+  opacity: 0.3;
 }
 
 .mix-blend-overlay {
