@@ -11,16 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        @await Html.PartialAsync("_Navbar")
-    </header>
+    @if (ViewData["HideNavbar"] as bool? != true)
+    {
+        <header>
+            @await Html.PartialAsync("_Navbar")
+        </header>
+    }
 
     @if (TempData["Message"] != null)
-{
-    <div data-alert class="fixed top-6 right-6 z-50 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg font-dm text-sm">
-        @TempData["Message"]
-    </div>
-}
+    {
+        <div data-alert class="fixed top-6 right-6 z-50 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg font-dm text-sm">
+            @TempData["Message"]
+        </div>
+    }
 
     <div class="w-full">
         <main role="main">
