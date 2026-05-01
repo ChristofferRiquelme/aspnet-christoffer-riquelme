@@ -3,8 +3,10 @@
     var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
 }
 
-<nav class="bg-[#0b0f1a] font-dm m-4 px-8 py-4 rounded-2xl shadow-lg">
-    <div class="flex items-center justify-between">
+@* <nav class="bg-[#0b0f1a] font-dm m-4 px-8 py-4 rounded-2xl shadow-lg"> *@
+<nav class="relative bg-[#131020] font-dm m-4 px-8 py-4 rounded-2xl shadow-lg overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/backgrounds/dark-section-img.svg')] bg-repeat opacity-60 pointer-events-none"></div>
+    <div class="relative z-10 flex items-center justify-between">
 
         <div class="flex items-center gap-3">
             <a asp-controller="Home" asp-action="Index">
@@ -19,26 +21,15 @@
                     : "text-white hover:text-[#D6EB31]")">
                 Fitness Centers
             </a>
+
             <a asp-controller="Membership" asp-action="Index"
                 class="@(currentController == "Membership"
                     ? "text-[#D6EB31]"
                     : "text-white hover:text-[#D6EB31]")">
                 Memberships
             </a>
-            @* <a asp-controller="Classes" asp-action="Index"
-                class="group flex items-center gap-1 @(currentController == "Classes"
-                    ? "text-[#D6EB31]"
-                    : "text-white hover:text-[#D6EB31]")">
-                Training 
-                <span class="relative w-[14px] h-4">
-                    <img src="/images/icons/arrow-down.svg"
-                        class="absolute inset-0 w-full h-full @(currentController == "Classes" ? "hidden" : "group-hover:hidden")" />
-                    <img src="/images/icons/arrow-down-hover.svg"
-                        class="absolute inset-0 w-full h-full @(currentController == "Classes" ? "block" : "hidden group-hover:block")" />
-                </span>
-            </a> *@
-
-            <div class="relative group py-4">
+            
+            <div class="relative group">
                 <a asp-controller="Classes" asp-action="Index"
                 class="flex items-center gap-1 @(currentController == "Classes"
                         ? "text-[#D6EB31]"
@@ -52,23 +43,24 @@
                             class="absolute inset-0 w-full h-full @(currentController == "Classes" ? "block" : "hidden group-hover:block")" />
                     </span>
                 </a>
-                <div class="absolute left-0 top-full z-50 hidden w-[190px] rounded-[20px] bg-[#D6EB31] px-4 py-6 group-hover:block">
+                <div class="absolute left-0 top-full h-3 w-full"></div>
+                <div class="absolute left-0 top-[calc(100%+10px)] z-50 hidden w-[190px] rounded-[20px] bg-[#D6EB31] px-4 py-6 group-hover:block">
                     <ul class="font-dm font-semibold text-[#131020]">
                         <li>
                             <a asp-controller="Classes" asp-action="Index" asp-route-category="Personal Training"
-                            class="block hover:opacity-70 mb-[14px]">
+                            class="block hover:opacity-70 mb-[14px] !text-[#131020]">
                                 • Personal Training
                             </a>
                         </li>
                         <li>
                             <a asp-controller="Classes" asp-action="Index" asp-route-category="Group Training"
-                            class="block hover:opacity-70 mb-[14px]">
+                            class="block hover:opacity-70 mb-[14px] !text-[#131020]">
                                 • Group Training
                             </a>
                         </li>
                         <li>
                             <a asp-controller="Classes" asp-action="Index" asp-route-category="Padel"
-                            class="block hover:opacity-70 mb-[14px]">
+                            class="block hover:opacity-70 mb-[14px] !text-[#131020]">
                                 • Padel
                             </a>
                         </li>

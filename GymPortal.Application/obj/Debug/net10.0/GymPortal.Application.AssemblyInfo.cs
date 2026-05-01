@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GymPortal.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b0d4e04673cd41e641db5fb72a7d6ce057b44dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9016ba9e28599667a96f842a7726d25f26e9154")]
 [assembly: System.Reflection.AssemblyProductAttribute("GymPortal.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GymPortal.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
