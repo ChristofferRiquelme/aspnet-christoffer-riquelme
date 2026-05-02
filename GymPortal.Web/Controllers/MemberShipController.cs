@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace GymPortal.Web.Controllers
 {
     [Authorize]
-    public class MemberShipController : Controller
+    public class MembershipController : Controller
     {
         private readonly AppDbContext _context;
 
-        public MemberShipController(AppDbContext context)
+        public MembershipController(AppDbContext context)
         {
             _context = context;
         }
@@ -26,26 +26,40 @@ namespace GymPortal.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create()
+        public ActionResult Create(string type)
+
         {
+
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             var exists = _context.Memberships.Any(m => m.UserId == userId && m.EndDate > DateTime.Now);
 
             if (!exists)
+
             {
+                var price = type == "Premium" ? 595.00m : 495.00m;
+
                 var membership = new Membership
                 {
+
                     UserId = userId!,
+
+                    Type = type,
+
+                    Price = price,
+
                     StartDate = DateTime.Now,
+
                     EndDate = DateTime.Now.AddMonths(1)
                 };
 
                 _context.Memberships.Add(membership);
+
                 _context.SaveChanges();
             }
 
             return RedirectToAction("Index");
+
         }
     }
 }

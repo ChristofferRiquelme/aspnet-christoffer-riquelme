@@ -1,25 +1,154 @@
 ﻿@using GymPortal.Domain
 @model Membership?
 
-<div class="max-w-xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6">Mitt medlemskap</h1>
+<section class="w-full bg-[#F3F3F3] py-20">
+    <div class="mx-auto max-w-[1320px] px-4">
 
-    @if (Model == null || !Model.IsActive)
-    {
-        <p class="text-red-500 mb-4">Du har inget aktivt medlemskap.</p>
+        <h1 class="font-poppins text-[48px] font-medium text-[#2A2934] text-center mb-16">
+            Our Membership Offers
+        </h1>
 
-        <form asp-action="Create" method="post">
-            <button class="bg-green-500 text-white px-4 py-2 rounded">
-                Skaffa medlemskap
-            </button>
-        </form>
-    }
-    else
-    {
-        <div class="p-4 bg-white shadow rounded-xl">
-            <p><strong>Start:</strong> @Model.StartDate.ToShortDateString()</p>
-            <p><strong>Slut:</strong> @Model.EndDate.ToShortDateString()</p>
-            <p class="text-green-600 font-semibold mt-2">Active</p>
+        <div class="grid grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-2xl p-8">
+                <img src="/images/icons/weight-icon.svg" class="w-12 h-12 mb-12" />
+
+                <h2 class="font-poppins text-lg font-semibold mb-6">Standard Membership</h2>
+                <div class="border-t mb-6"></div>
+
+                <p class="font-dm text-gray-500 mb-10">
+                    With the Standard Membership, get access to our full range of gym facilities.
+                </p>
+
+                <ul class="space-y-4 font-dm text-gray-500 mb-8">
+                    <li class="flex gap-3">
+                        <img src="/images/icons/check-bot.svg" class="w-4" />
+                        Standard Locker
+                    </li>
+                    <li class="flex gap-3">
+                        <img src="/images/icons/check-bot.svg" class="w-4" />
+                        High-energy group fitness classes
+                    </li>
+                    <li class="flex gap-3">
+                        <img src="/images/icons/check-bot.svg" class="w-4" />
+                        Motivating & supportive environment
+                    </li>
+                </ul>
+
+                <div class="bg-[#080516] text-white rounded-2xl p-5">
+                    <div class="flex items-center justify-between mb-5">
+                        <div>
+                            <p class="font-poppins text-2xl font-semibold">
+                                495.00 <span class="font-dm text-xs font-normal">/monthly</span>
+                            </p>
+                            <p class="font-dm text-sm">* Monthly 20 Classes</p>
+                        </div>
+
+                        <form asp-action="Create" method="post">
+                            <input type="hidden" name="type" value="Standard" />
+                            <button class="inline-flex items-center gap-3 bg-[#D6EB31] text-black px-5 py-3 rounded-full font-dm font-semibold text-sm">
+                                Join Now
+                                <img src="/images/icons/arrow-right.svg" class="w-[10px] h-4" />
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="border-t border-white/10 pt-5 font-dm text-sm">
+                        Try Any Membership Fre for 1 Week
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8">
+                <img src="/images/icons/weight-icon.svg" class="w-12 h-12 mb-12" />
+
+                <h2 class="font-poppins text-lg font-semibold mb-6">Premium Membership</h2>
+                <div class="border-t mb-6"></div>
+
+                <p class="font-dm text-gray-500 mb-10">
+                    With the Premium Membership, get access to our full range of gym facilities.
+                </p>
+
+                <ul class="space-y-4 font-dm text-gray-500 mb-8">
+                    <li class="flex gap-3">
+                        <img src="/images/icons/check-bot.svg" class="w-4" />
+                        Priority Support & Premium Locker
+                    </li>
+                    <li class="flex gap-3">
+                        <img src="/images/icons/check-bot.svg" class="w-4" />
+                        High-energy group fitness classes
+                    </li>
+                    <li class="flex gap-3">
+                        <img src="/images/icons/check-bot.svg" class="w-4" />
+                        Motivating & supportive environment
+                    </li>
+                </ul>
+
+                <div class="bg-[#080516] text-white rounded-2xl p-5">
+                    <div class="flex items-center justify-between mb-5">
+                        <div>
+                            <p class="font-poppins text-2xl font-semibold">
+                                595.00 <span class="font-dm text-xs font-normal">/monthly</span>
+                            </p>
+                            <p class="font-dm text-sm">* Monthly 20 Classes</p>
+                        </div>
+
+                        <form asp-action="Create" method="post">
+                            <input type="hidden" name="type" value="Premium" />
+                            <button class="inline-flex items-center gap-3 bg-[#D6EB31] text-black px-5 py-3 rounded-full font-dm font-semibold text-sm">
+                                Join Now
+                                <img src="/images/icons/arrow-right.svg" class="w-[10px] h-4" />
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="border-t border-white/10 pt-5 font-dm text-sm">
+                        Try Any Membership Fre for 1 Week
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden bg-[#080516] text-white rounded-2xl p-8 text-center">
+                <h2 class="font-poppins text-xl font-semibold mb-4">Get Your Membership</h2>
+
+                <p class="font-dm mb-8">
+                    Our memberships give you access to all equipment, personalized training.
+                </p>
+
+                <div class="border-t border-white/10 mb-8"></div>
+
+                <p class="font-poppins text-xl font-extrabold mb-10">
+                    Call Us At: +(46) 8 410 521 00
+                </p>
+
+                <a href="#"
+                   class="inline-flex items-center gap-3 bg-[#D6EB31] text-black px-6 py-3 rounded-full font-dm font-semibold text-sm">
+                    Call Us Today!
+                    <img src="/images/icons/arrow-right.svg" class="w-[10px] h-4" />
+                </a>
+
+                <img src="/images/backgrounds/trainer.svg"
+                     class="absolute bottom-0 right-0 w-[330px]" />
+            </div>
+
         </div>
-    }
-</div>
+
+        <div class="flex justify-center gap-16 mt-14 font-dm">
+            <div class="flex items-center gap-3">
+                <img src="/images/icons/free-trial.svg" class="w-5 h-5" />
+                Get 30 day free trial
+            </div>
+
+            <div class="flex items-center gap-3">
+                <img src="/images/icons/fees.svg" class="w-5 h-5" />
+                No any hidden fees pay
+            </div>
+
+            <div class="flex items-center gap-3">
+                <img src="/images/icons/anytime.svg" class="w-5 h-5" />
+                You can cancel anytime
+            </div>
+        </div>
+
+    </div>
+</section>
