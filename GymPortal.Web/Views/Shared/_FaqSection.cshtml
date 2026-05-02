@@ -1,0 +1,140 @@
+﻿<section class="w-full py-24">
+    <div class="mx-auto max-w-[1320px] px-3 grid grid-cols-2 gap-12 items-center">
+
+        <div>
+            <img src="/images/backgrounds/faqs-image.svg"
+                 alt="FAQ image"
+                 class="w-full rounded-2xl object-cover" />
+        </div>
+
+        <div>
+            <div class="inline-flex items-center gap-2 bg-[#2A2934] text-white px-4 py-2 rounded-full font-dm font-semibold text-sm mb-6">
+                <span class="w-2 h-2 bg-[#D6EB31] rounded-full"></span>
+                Frequently Asked Questions
+            </div>
+
+            <h2 class="font-poppins text-[48px] font-medium text-[#2A2934] leading-tight mb-10">
+                Common questions about<br />
+                gym and training
+            </h2>
+
+            <div class="faq-list space-y-6">
+
+                <div class="faq-item border-b pb-6">
+                    <button type="button" class="faq-button w-full flex justify-between items-center text-left">
+                        <span class="font-dm font-semibold text-[#2A2934]">
+                            Q1. Do I need prior gym experience to Join CoreFitness?
+                        </span>
+
+                        <span class="w-8 h-8 bg-[#D6EB31] rounded-full flex items-center justify-center shrink-0">
+                            <img src="/images/icons/chevron.svg" class="faq-icon w-6 transition-transform rotate-180" />
+                        </span>
+                    </button>
+
+                    <div class="faq-content mt-6 font-dm text-gray-500">
+                        <p class="mb-6">
+                            No, GymPro is designed for all fitness levels. Our trainers guide beginners with
+                            proper techniques and structured workout plans to help them start safely and confidently.
+                        </p>
+
+                        <ul class="space-y-3">
+                            <li class="flex gap-3">
+                                <span class="mt-2 w-1.5 h-1.5 bg-[#D6EB31] rounded-full shrink-0"></span>
+                                Every new member receives a personalized introduction to equipments
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="mt-2 w-1.5 h-1.5 bg-[#D6EB31] rounded-full shrink-0"></span>
+                                Workouts are designed to grow with you, ensuring beginners can start safely.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item border-b pb-6">
+                    <button type="button" class="faq-button w-full flex justify-between items-center text-left">
+                        <span class="font-dm font-semibold text-[#2A2934]">
+                            Q2. What facilities are included with the membership?
+                        </span>
+
+                        <span class="w-8 h-8 bg-[#D6EB31] rounded-full flex items-center justify-center shrink-0">
+                            <img src="/images/icons/chevron.svg" class="faq-icon w-6 transition-transform" />
+                        </span>
+                    </button>
+
+                    <div class="faq-content hidden mt-6 font-dm text-gray-500">
+                        Your membership includes gym access, group training areas, locker rooms, showers, and selected fitness classes.
+                    </div>
+                </div>
+
+                <div class="faq-item border-b pb-6">
+                    <button type="button" class="faq-button w-full flex justify-between items-center text-left">
+                        <span class="font-dm font-semibold text-[#2A2934]">
+                            Q3. Can I try the gym before taking a membership?
+                        </span>
+
+                        <span class="w-8 h-8 bg-[#D6EB31] rounded-full flex items-center justify-center shrink-0">
+                            <img src="/images/icons/chevron.svg" class="faq-icon w-6 transition-transform" />
+                        </span>
+                    </button>
+
+                    <div class="faq-content hidden mt-6 font-dm text-gray-500">
+                        Yes, you can book a trial session before choosing a membership.
+                    </div>
+                </div>
+
+                <div class="faq-item border-b pb-6">
+                    <button type="button" class="faq-button w-full flex justify-between items-center text-left">
+                        <span class="font-dm font-semibold text-[#2A2934]">
+                            Q4. Are there group workout programs available?
+                        </span>
+
+                        <span class="w-8 h-8 bg-[#D6EB31] rounded-full flex items-center justify-center shrink-0">
+                            <img src="/images/icons/chevron.svg" class="faq-icon w-6 transition-transform" />
+                        </span>
+                    </button>
+
+                    <div class="faq-content hidden mt-6 font-dm text-gray-500">
+                        Yes, we offer several group training programs for different fitness levels.
+                    </div>
+                </div>
+
+                <div class="faq-item border-b pb-6">
+                    <button type="button" class="faq-button w-full flex justify-between items-center text-left">
+                        <span class="font-dm font-semibold text-[#2A2934]">
+                            Q5. Is nutrition guidance included in the plans?
+                        </span>
+
+                        <span class="w-8 h-8 bg-[#D6EB31] rounded-full flex items-center justify-center shrink-0">
+                            <img src="/images/icons/chevron.svg" class="faq-icon w-6 transition-transform" />
+                        </span>
+                    </button>
+
+                    <div class="faq-content hidden mt-6 font-dm text-gray-500">
+                        Some plans include nutrition guidance. You can also add personal nutrition support separately.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll(".faq-button").forEach(button => {
+        button.addEventListener("click", () => {
+            const currentItem = button.closest(".faq-item");
+            const currentContent = currentItem.querySelector(".faq-content");
+            const currentIcon = currentItem.querySelector(".faq-icon");
+
+            document.querySelectorAll(".faq-item").forEach(item => {
+                if (item !== currentItem) {
+                    item.querySelector(".faq-content").classList.add("hidden");
+                    item.querySelector(".faq-icon").classList.remove("rotate-180");
+                }
+            });
+
+            currentContent.classList.toggle("hidden");
+            currentIcon.classList.toggle("rotate-180");
+        });
+    });
+</script>
