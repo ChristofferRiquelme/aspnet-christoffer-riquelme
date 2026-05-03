@@ -1,67 +1,139 @@
 ﻿@page
 @model RegisterModel
+
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Become Member";
+    ViewData["HideFooter"] = true;
 }
 
-<h1>@ViewData["Title"]</h1>
+<section class="min-h-screen flex items-center justify-center bg-[#F3F3F3] px-4 py-20">
+    <div class="w-full max-w-[920px] bg-white rounded-3xl px-10 md:px-20 py-12 md:py-16">
 
-<div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+        <form method="post" id="registerForm">
+            <div asp-validation-summary="ModelOnly" class="text-red-500 font-dm text-sm mb-4"></div>
+
+            <div id="stepEmail">
+                <h1 class="font-poppins text-[56px] font-medium text-black mb-4">
+                    Become a Member
+                </h1>
+
+                <p class="font-dm text-gray-500 text-lg max-w-[760px] leading-relaxed mb-12">
+                    Sign up to continue your fitness journey with full access to your customized program,
+                    training history, and progress tracking.
+                </p>
+
+                <div class="border-t mb-16"></div>
+
+                <div class="flex justify-center gap-4 mb-16">
+                    <img src="/images/icons/google.svg" class="w-16 h-16" />
+                    <img src="/images/icons/facebook.svg" class="w-16 h-16" />
+                    <img src="/images/icons/github.svg" class="w-16 h-16" />
+                </div>
+
+                <div class="flex items-center gap-6 mb-14">
+                    <div class="h-px bg-gray-200 flex-1"></div>
+                    <span class="font-dm text-gray-500 uppercase">Or continue with</span>
+                    <div class="h-px bg-gray-200 flex-1"></div>
+                </div>
+
+                <div class="mb-12">
+                    <label asp-for="Input.Email" class="block font-dm font-semibold text-[#2A2934] mb-3">
+                        Email Address *
+                    </label>
+
+                    <input asp-for="Input.Email"
+                           id="emailInput"
+                           placeholder="Enter Email Address"
+                           class="w-full bg-[#F5F5F5] rounded-xl px-7 py-5 font-dm outline-none" />
+
+                    <span asp-validation-for="Input.Email" class="text-red-500 text-sm font-dm"></span>
+                </div>
+
+                <button type="button"
+                        onclick="goToPasswordStep()"
+                        class="mx-auto mb-8 flex w-[70%] items-center justify-center gap-6 bg-[#D6EB31] text-black px-7 py-5 rounded-full font-dm font-semibold text-lg hover:bg-lime-300 transition">
+                    Continue
+                    <img src="/images/icons/arrow-right.svg" class="w-[10px] h-4" />
+                </button>
+
+                <p class="font-dm text-gray-500 text-center text-lg">
+                    We will send a verification code to your email address.
+                </p>
             </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+            <div id="stepPassword" class="hidden">
+                <h1 class="font-poppins text-[56px] font-medium text-black mb-4">
+                    Set Your Password
+                </h1>
+
+                <p class="font-dm text-gray-500 text-lg max-w-[760px] leading-relaxed mb-12">
+                    Set a strong password to protect your account. For security reasons, your password must be at
+                    least 8 characters long and include uppercase and lowercase letters, numbers, and special
+                    characters.
+                </p>
+
+                <div class="border-t mb-14"></div>
+
+                <div class="mb-7">
+                    <label class="block font-dm font-semibold text-[#2A2934] mb-3">
+                        Email Address
+                    </label>
+
+                    <input id="emailPreview"
+                           readonly
+                           class="w-full bg-[#F5F5F5] rounded-xl px-7 py-5 font-dm outline-none text-gray-500" />
+                </div>
+
+                <div class="mb-12">
+                    <label asp-for="Input.Password" class="block font-dm font-semibold text-[#2A2934] mb-3">
+                        Password
+                    </label>
+
+                    <input asp-for="Input.Password"
+                           id="passwordInput"
+                           placeholder="Enter Password"
+                           class="w-full bg-[#F5F5F5] rounded-xl px-7 py-5 font-dm outline-none" />
+
+                    <span asp-validation-for="Input.Password" class="text-red-500 text-sm font-dm"></span>
+                </div>
+
+                <input asp-for="Input.ConfirmPassword" id="confirmPasswordInput" type="hidden" />
+
+                <button type="submit"
+                        class="mx-auto mb-10 flex w-[70%] items-center justify-center gap-6 bg-[#D6EB31] text-black px-7 py-5 rounded-full font-dm font-semibold text-lg hover:bg-lime-300 transition">
+                    Continue
+                    <img src="/images/icons/arrow-right.svg" class="w-[10px] h-4" />
+                </button>
+
+                <label class="flex items-center justify-center gap-5 font-dm text-[#2A2934]">
+                    <input type="checkbox" class="w-8 h-8 rounded-lg accent-[#D6EB31]" />
+                    Accept user terms and conditions
+                </label>
             </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
+
     </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>
+</section>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        function goToPasswordStep() {
+            const email = document.getElementById("emailInput").value;
+
+            if (!email) {
+                return;
+            }
+
+            document.getElementById("emailPreview").value = email;
+            document.getElementById("stepEmail").classList.add("hidden");
+            document.getElementById("stepPassword").classList.remove("hidden");
+        }
+
+        document.getElementById("registerForm").addEventListener("submit", function () {
+            const password = document.getElementById("passwordInput").value;
+            document.getElementById("confirmPasswordInput").value = password;
+        });
+    </script>
 }

@@ -86,7 +86,7 @@
 
             @if (User.Identity!.IsAuthenticated)
             {
-                <form asp-area="Identity" asp-page="/Account/Logout" method="post">
+                <form asp-area="Identity" asp-page="/Account/Logout" method="post" asp-route-returnUrl="/Identity/Account/Login">
                     <button type="submit"
                         class="text-white text-sm hover:text-[#D6EB31] transition" >
                         Logout

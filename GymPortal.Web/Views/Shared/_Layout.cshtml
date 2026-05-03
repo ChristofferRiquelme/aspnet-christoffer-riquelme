@@ -31,9 +31,12 @@
         </main>
     </div>
 
-    <footer>
-        <partial name="_Footer" />
-    </footer>
+    @if (ViewData["HideFooter"] as bool? != true)
+    {
+        <footer>
+            <partial name="_Footer" />
+        </footer>
+    }
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
