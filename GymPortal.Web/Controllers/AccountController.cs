@@ -88,6 +88,20 @@ namespace GymPortal.Web.Controllers
             if (user == null)
                 return NotFound();
             
+            if (!string.IsNullOrEmpty(user.ProfileImagePath))
+            {
+                var imagePath = Path.Combine(
+                    Directory.GetCurrentDirectory(),
+                    "wwwroot",
+                    user.ProfileImagePath.TrimStart('/')
+                );
+
+                if (System.IO.File.Exists(imagePath))
+                {
+                    System.IO.File.Delete(imagePath);
+                }
+            }
+            
             var bookings = _context.Bookings.Where(b => b.UserId == userId);
             _context.Bookings.RemoveRange(bookings);
 
