@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Customer Service";
+}
+
+<section class="w-full bg-[#F3F3F3] py-20">
+    <div class="mx-auto max-w-[1320px] px-4">
+
+        <h1 class="font-poppins text-[48px] font-medium text-[#2A2934] text-center mb-16">
+            Customer Service
+        </h1>
+
+        <div class="grid grid-cols-2 bg-white rounded-2xl overflow-hidden">
+
+            <div class="relative">
+                <img src="/images/backgrounds/contact-us.svg"
+                     alt="Contact us"
+                     class="w-full h-full object-cover" />
+
+                <div class="absolute left-10 right-10 bottom-10 bg-[#2A2934]/90 rounded-2xl px-8 py-6 flex justify-between text-white">
+
+                    <div class="flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-full bg-[#D6EB31] flex items-center justify-center">
+                            <img src="/images/icons/phone.svg" class="w-6 h-6" />
+                        </span>
+
+                        <div>
+                            <p class="font-poppins font-semibold text-xl">Phone Number</p>
+                            <p class="font-dm">+(46) 8 410 521 00</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-full bg-[#D6EB31] flex items-center justify-center">
+                            <img src="/images/icons/email.svg" class="w-6 h-6" />
+                        </span>
+
+                        <div>
+                            <p class="font-poppins font-semibold text-xl">Email Address</p>
+                            <p class="font-dm">info@corefitness.se</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="p-20">
+                <h2 class="font-poppins text-[28px] font-semibold text-[#2A2934] mb-5">
+                    Contact Us Today
+                </h2>
+
+                <p class="font-dm text-gray-500 max-w-[560px] mb-10">
+                    Ready to begin your fitness journey? Contact GymPro today and let our
+                    expert trainers guide you with the right program and support.
+                </p>
+
+                <form class="space-y-6">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <label class="block font-dm font-semibold text-sm mb-3">First Name *</label>
+                            <input type="text"
+                                   placeholder="Enter First Name"
+                                   class="w-full bg-[#F5F5F5] rounded-xl px-6 py-5 font-dm outline-none" />
+                        </div>
+
+                        <div>
+                            <label class="block font-dm font-semibold text-sm mb-3">Last Name *</label>
+                            <input type="text"
+                                   placeholder="Enter Last Name"
+                                   class="w-full bg-[#F5F5F5] rounded-xl px-6 py-5 font-dm outline-none" />
+                        </div>
+
+                        <div>
+                            <label class="block font-dm font-semibold text-sm mb-3">Email Address *</label>
+                            <input type="email"
+                                   placeholder="Enter Email Address"
+                                   class="w-full bg-[#F5F5F5] rounded-xl px-6 py-5 font-dm outline-none" />
+                        </div>
+
+                        <div>
+                            <label class="block font-dm font-semibold text-sm mb-3">Phone Number</label>
+                            <input type="text"
+                                   placeholder="Enter Phone Number"
+                                   class="w-full bg-[#F5F5F5] rounded-xl px-6 py-5 font-dm outline-none" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block font-dm font-semibold text-sm mb-3">Message *</label>
+                        <textarea rows="6"
+                                  placeholder="Message..."
+                                  class="w-full bg-[#F5F5F5] rounded-xl px-6 py-5 font-dm outline-none resize-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="inline-flex items-center gap-4 bg-[#D6EB31] text-black px-7 py-4 rounded-full font-dm font-semibold">
+                        Submit Message
+                        <img src="/images/icons/arrow-right.svg" class="w-[10px] h-4" />
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<partial name="_FaqSection" />

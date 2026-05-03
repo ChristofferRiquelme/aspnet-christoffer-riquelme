@@ -23,6 +23,7 @@
     <Folder Include="Views/Account/" />
     <Folder Include="Views/Booking/" />
     <Folder Include="Views/Classes/" />
+    <Folder Include="Views/CustomerService/" />
     <Folder Include="Views/Membership/" />
     <Folder Include="wwwroot/images/account/" />
     <Folder Include="wwwroot/images/icons/" />
